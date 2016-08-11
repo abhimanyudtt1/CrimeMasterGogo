@@ -34,15 +34,14 @@ Options:
 						
 eg Config file :
 path = ./TestSuit
- URL = https://app.stg.quadanalytix.com/login
-# URL = https://www.facebook.com
+URL = https://www.facebook.com
 chromeDriver = ./extensions/chromedriver
 remote_location = 127.0.0.1
 startTime = 1438560000
 endTime =   1441584000
 email = test@test.com
 password = test
-# In seconds
+
 timeWait = 10
 
 eg variable file :
