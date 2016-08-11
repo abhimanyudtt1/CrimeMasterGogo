@@ -4,7 +4,7 @@ import sys
 import src.configs
 import unittest
 import threading
-
+from src.testResults import reports
 
 
 # add here some import paths
@@ -127,3 +127,7 @@ for i in testSuite.values():
     t = threading.Thread(target=unittest.TextTestRunner().run,args=(i,))
     threads.append(t)
     t.start()
+
+#print reports.getFullReport()
+# Creating html reports now
+

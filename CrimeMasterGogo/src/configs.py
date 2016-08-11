@@ -33,7 +33,9 @@ class parser(object):
                     pass
             else:
                 line = re.sub('\s+:\s+', ':', line)
+
                 line = re.sub('\'','',line)
+                print line
                 par = re.search('([\[\]\"=A-Za-z_\-\.0-9]+):([\[\]=/\" A-Za-z_\-\.@0-9]+)', line)
                 (k, v) = (par.group(1), par.group(2))
                 # except Exception :
