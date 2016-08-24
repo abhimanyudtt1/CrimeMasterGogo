@@ -18,9 +18,15 @@ class slice(object):
             return None
 
 
-    def freeSlice(self,index):
-        sys.argv[index] = 0
-        self.q[index-1] = 0
+    #def freeSlice(self,index):
+    #    sys.argv[index] = 0
+    #    self.q[index-1] = 0
+
+    def freeSliceAll(self):
+        for each in self.q:
+            self.q[each].close()
+        self.q = {}
+
 
     def setSlice(self,index,value):
         self.q[index] = value

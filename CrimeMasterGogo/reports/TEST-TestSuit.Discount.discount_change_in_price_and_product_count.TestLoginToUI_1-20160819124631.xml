@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="1" failures="0" name="TestSuit.Discount.discount_change_in_price_and_product_count.TestLoginToUI_1-20160819124631" skipped="0" tests="1" time="92.919">
+	<testcase classname="TestSuit.Discount.discount_change_in_price_and_product_count.TestLoginToUI_1" name="test_testLogin" time="92.919">
+		<error message="Message: None
+" type="WebDriverException">
+<![CDATA[Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/discount_change_in_price_and_product_count.py", line 18, in test_testLogin
+    gogo.appUI.waitTillLoading()
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 278, in waitTillLoading
+    raise exceptions.WebDriverException
+WebDriverException: Message: None
+
+
+Stdout:
+Testing Product pricing - data_table
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Page loading complete
+Waiting for page to load
+date selected : 3-08-2015 to 13-09-2015 
+Page loading timeout
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[Testing Product pricing - data_table
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Page loading complete
+Waiting for page to load
+date selected : 3-08-2015 to 13-09-2015 
+Page loading timeout
+]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

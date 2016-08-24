@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="TestSuit.product_assortment.Product_count_over_time.TestLoginToUI_1-20160819124631" skipped="0" tests="1" time="20.185">
+	<testcase classname="TestSuit.product_assortment.Product_count_over_time.TestLoginToUI_1" name="test_testLogin" time="20.185"/>
+	<system-out>
+<![CDATA[Testing Product pricing - Price Ranges
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+Page loading complete
+Waiting for page to load
+Page loading complete
+Page loading complete
+Checking if URL is correct
+[(<frame object at 0x7fd02af7ec50>, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (<frame object at 0x7fd02ac2a180>, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (<frame object at 0x7fd02af83530>, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/Product_count_over_time.py', 22, 'test_testLogin', ['        testResults.passed("Testing Product assortment - Product Count Over Time")\n'], 0), (<frame object at 0x7fd02af6c390>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (<frame object at 0x10cf335c0>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (<frame object at 0x10ced9620>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (<frame object at 0x10cf33220>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (<frame object at 0x10ced9430>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (<frame object at 0x10cf33050>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (<frame object at 0x10ced9240>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (<frame object at 0x10cf16b30>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (<frame object at 0x7fd02e054db0>, '/Library/Python/2.7/site-packages/unittest_xml_reporting-2.1.0-py2.7.egg/xmlrunner/runner.py', 66, 'run', ['            test(result)\n'], 0), (<frame object at 0x10cf2d3e0>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (<frame object at 0x7fd02e054ba0>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (<frame object at 0x10cf2e050>, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-08-19 11:29:56</p>
+<p class='attribute'><strong>Duration:</strong> 0:02:43.880249</p>
+<p class='attribute'><strong>Status:</strong> Pass 6</p>
+
+<p class='description'>This demonstrates the report output by Prasanna.Yelsangikar.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_pricing.changes_in_price_n_products.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Testing Product pricing - Changes In Price and Products
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_pricing.data_table.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: Testing Product pricing - data_table
+Page loading complete
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec342d260&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_pricing/data_table.py', 22, 'test_testLogin', ["        testResults.passed('Testing Product pricing - data_table')\n"], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712240&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2960&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1de0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d25c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f230&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c710050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec51080c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c70fc90&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_pricing.price_distribution_by_price.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: Testing Product pricing - Product Distribution by Price
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Page loading timeout
+E
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_pricing.price_over_time.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: Testing Product pricing - Average Price over Time
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+date selected : 3-08-2015 to 13-09-2015 
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec3568d20&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_pricing/price_over_time.py', 22, 'test_testLogin', ["        testResults.passed('Testing Product pricing - Average Price over Time')\n"], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712240&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2960&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1de0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d25c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f230&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c710050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec51080c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c70fc90&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_pricing.price_ranges.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: Testing Product pricing - Price Ranges
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading timeout
+E
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_pricing.relative_bar_chart.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: Testing Product pricing - Relative Bar Chart
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+Searching for the element on the screen. Element : input[name="email"]
+E
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>6</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-08-19 11:29:56</p>
+<p class='attribute'><strong>Duration:</strong> 0:03:54.234222</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Error 5</p>
+
+<p class='description'>This demonstrates the report output by Prasanna.Yelsangikar.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.Discount.discount_change_in_price_and_product_count.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: Testing Discount - Discount Change in Price and Product Count
+Loading URL : https://app.stg.quadanalytix.com
+Loading URL : https://app.stg.quadanalytix.com
+Loading URL : https://app.stg.quadanalytix.com
+Loading complete
+Loading complete
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : [quad-id="priceDetail_insight"]
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : [quad-id="priceDetail_insight"]
+Element not clickable, Waiting to click on element &lt;selenium.webdriver.remote.webelement.WebElement (session="7e32f4f3-1c14-417d-83af-09ebfa812fa2", element="4")&gt;
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : [quad-id="productDetail_insight"]
+Page loading complete
+Element not clickable, Waiting to click on element &lt;selenium.webdriver.remote.webelement.WebElement (session="0e91faf4-a8cf-42a6-827b-793547905088", element="4")&gt;
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x10c717228&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/discount_change_in_price_and_product_count.py', 22, 'test_testLogin', ['        testResults.passed("Testing Discount - Discount Change in Price and Product Count")\n'], 0), (&lt;frame object at 0x7faec35291f0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c7185c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712810&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c7183f0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718220&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712430&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f9b0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c7105a8&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec355e670&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c719050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestSuit.Discount.discount_level_for_discounted_products.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Testing Discount - Discount Level For Discounted Products
+Page loading complete
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x10c2d2d00&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_pricing/changes_in_price_n_products.py', 22, 'test_testLogin', ["        testResults.passed('Testing Product pricing - Changes In Price and Products - URL')\n"], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712240&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2960&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1de0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d25c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f230&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c710050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec51080c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c70fc90&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+.Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/discount_level_for_discounted_products.py", line 17, in test_testLogin
+    gogo.appUI.selectFilter('category', 'coffee maker')
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 220, in selectFilter
+    self.waitTillLoading(driver=self.getCurrentTestSuit())
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 278, in waitTillLoading
+    raise exceptions.WebDriverException
+WebDriverException: Message: None
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestSuit.Discount.discount_product_count_over_time.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Testing Discount - Discount Product Count Over Time
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec343e940&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_pricing/price_distribution_by_price.py', 22, 'test_testLogin', ["        testResults.passed('Testing Product pricing - Product Distribution by Price')\n"], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712240&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2960&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1de0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d25c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f230&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c710050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec51080c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c70fc90&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+.Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/discount_product_count_over_time.py", line 15, in test_testLogin
+    gogo.appUI.goToInsight('discount_product_count_over_time')
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 157, in goToInsight
+    self.clearAllFilters(parser.clear_all_button,driver=self.getCurrentTestSuit())
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 288, in clearAllFilters
+    self.waitTillLoading(driver=driver)
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 278, in waitTillLoading
+    raise exceptions.WebDriverException
+WebDriverException: Message: None
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestSuit.Discount.discounted_product_count.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: Testing Discount - Discounted Product Count
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+Searching for the element on the screen. Element : input[name="email"]
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec3559dc0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_pricing/price_ranges.py', 22, 'test_testLogin', ["        testResults.passed('Testing Product pricing - Price Ranges')\n"], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712240&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2960&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1de0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d25c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f230&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c710050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec51080c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c70fc90&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+.Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/discounted_product_count.py", line 14, in test_testLogin
+    gogo.appUI.login()
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 141, in login
+    email = self.waiter(parser.email_tag,driver=suite)
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 70, in waiter
+    raise exceptions.NoSuchElementException
+NoSuchElementException: Message: None
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestSuit.Discount.percentage_of_product_discounted.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: Testing Discount - Percentage Of Product Discounted
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec3433c70&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_pricing/relative_bar_chart.py', 22, 'test_testLogin', ["        testResults.passed('Testing Product pricing - Relative Bar Chart')\n"], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712240&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d2960&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1de0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2d25c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c71f230&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c710050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec51080c0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c70fc90&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+.
+Time Elapsed: 0:02:43.880249
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/percentage_of_product_discounted.py", line 14, in test_testLogin
+    gogo.appUI.login()
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 141, in login
+    email = self.waiter(parser.email_tag,driver=suite)
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 70, in waiter
+    raise exceptions.NoSuchElementException
+NoSuchElementException: Message: None
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestSuit.Discount.product_discount_for_discounted_products.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: Testing Discount - Product Discount For Discounted Products
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Searching for the element on the screen. Element : input[name="email"]
+Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/Discount/product_discount_for_discounted_products.py", line 15, in <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-08-19 11:29:56</p>
+<p class='attribute'><strong>Duration:</strong> 0:07:31.304037</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Error 1</p>
+
+<p class='description'>This demonstrates the report output by Prasanna.Yelsangikar.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestSuit.product_assortment.bar_chart.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Testing Product assortment - Bar Chart
+Traceback (most recent call last):
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/bar_chart.py", line 13, in test_testLogin
+    driver = gogo.appUI.init()
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 39, in init
+    self.driver[self.getCurrentTestSuit()].get(parser.URL)
+  File "/Library/Python/2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 248, in get
+    self.execute(Command.GET, {'url': url})
+  File "/Library/Python/2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Python/2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+TimeoutException: Message: timeout: cannot determine loading status
+from timeout: Timed out receiving message from renderer: -0.009
+  (Session info: chrome=52.0.2743.116)
+  (Driver info: chromedriver=2.22.397929 (fb72fb249a903a0b1041ea71eb4c8b3fa0d9be5a),platform=Mac OS X 10.10.5 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 300.00 seconds
+Build info: version: '3.0.0-beta1', revision: '8e4315c', time: '2016-07-28 18:04:05 -0700'
+System info: host: 'Abhimanyus-MacBook-Pro.local', ip: '10.9.27.166', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_92'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.22.397929 (fb72fb249a903a0b1041ea71eb4c8b3fa0d9be5a), userDataDir=/var/folders/29/x7ksh8n52j93qjvrv5yn91bw0000gn/T/.org.chromium.Chromium.8KQm8n}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: eae6797079c86ee8ccfa3e8890ad04fd
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.ErrorHandler.createThrowable (ErrorHandler.java:206)
+    at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed (ErrorHandler.java:158)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:683)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:331)
+    at sun.reflect.GeneratedMethodAccessor42.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:103)
+    at com.sun.proxy.$Proxy3.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:162)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_assortment.cumulative_rating.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: Testing Product assortment - Cumulative Rating
+Loading URL : https://app.stg.quadanalytix.com
+Loading complete
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : .nav-icon.icon-explore
+Searching for the element on the screen. Element : [quad-id="productRatings_insight"]
+Element not clickable, Waiting to click on element &lt;selenium.webdriver.remote.webelement.WebElement (session="e7ec249d-847a-4ff1-b2cb-23541c11be12", element="4")&gt;
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x10c2b9d00&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/cumulative_rating.py', 22, 'test_testLogin', ['        testResults.passed("Testing Product assortment - Cumulative Rating")\n'], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718220&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1430&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c2909b0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c2d1050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec52297d0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c1d0750&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_assortment.data_table.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: Testing Product assortment - Data Table
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+Waiting for page to load
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec5243ef0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/data_table.py', 23, 'test_testLogin', ['        testResults.passed("Testing Product assortment - Data Table")\n'], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718220&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1430&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c2909b0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c2d1050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec52297d0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c1d0750&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_assortment.pie_chart.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: Testing Product assortment - Pie Chart
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec522a330&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/pie_chart.py', 22, 'test_testLogin', ['        testResults.passed("Testing Product assortment - Pie Chart")\n'], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718220&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1430&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c2909b0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c2d1050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec52297d0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c1d0750&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_assortment.Product_count_over_time.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: Testing Product assortment - Product Count Over Time
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Waiting for page to load
+Waiting for page to load
+Page loading complete
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec522dc70&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/Product_count_over_time.py', 22, 'test_testLogin', ['        testResults.passed("Testing Product assortment - Product Count Over Time")\n'], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718220&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1430&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c2909b0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c2d1050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec52297d0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c1d0750&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestSuit.product_assortment.product_counts.TestLoginToUI_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_testLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: Testing Product assortment - Product Count Over Time
+Page loading complete
+Page loading complete
+date selected : 3-08-2015 to 13-09-2015 
+Page loading complete
+Page loading complete
+Page loading complete
+Checking if URL is correct
+[(&lt;frame object at 0x10cfcd3d0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 6, 'getCurrentTestSuit', ['    print inspect.stack()\n'], 0), (&lt;frame object at 0x7faec5300470&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/testResults.py', 17, 'passed', ['        self._report[test] = (1,getCurrentTestSuit())\n'], 0), (&lt;frame object at 0x7faec50731a0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/TestSuit/product_assortment/product_counts.py', 22, 'test_testLogin', ['        testResults.passed("Testing Product assortment - Product Count Over Time")\n'], 0), (&lt;frame object at 0x7faec3529920&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 331, 'run', ['                    testMethod()\n'], 0), (&lt;frame object at 0x10c2d2b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py', 395, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9b30&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c712620&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c718220&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c1e1430&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 108, 'run', ['                test(result)\n'], 0), (&lt;frame object at 0x10c2b9790&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py', 70, '__call__', ['        return self.run(*args, **kwds)\n'], 0), (&lt;frame object at 0x10c2909b0&gt;, '/Users/abhimanyudutta/repos/CrimeMasterGogo/src/HTMLTestRunner.py', 628, 'run', ['        test(result)\n'], 0), (&lt;frame object at 0x10c2d1050&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 763, 'run', ['                self.__target(*self.__args, **self.__kwargs)\n'], 0), (&lt;frame object at 0x7faec52297d0&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 810, '__bootstrap_inner', ['                self.run()\n'], 0), (&lt;frame object at 0x10c1d0750&gt;, '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py', 783, '__bootstrap', ['            self.__bootstrap_inner()\n'], 0)]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>6</td>
+    <td>5</td>
+    <td>0</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
+test_testLogin
+    gogo.appUI.login()
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 141, in login
+    email = self.waiter(parser.email_tag,driver=suite)
+  File "/Users/abhimanyudutta/repos/CrimeMasterGogo/src/gogo.py", line 70, in waiter
+    raise exceptions.NoSuchElementException
+NoSuchElementException: Message: None
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>6</td>
+    <td>1</td>
+    <td>0</td>
+    <td>5</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
