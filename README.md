@@ -61,7 +61,7 @@ The variables in the config files provided can be accessed directly in a test ca
 from src.config import parser
 print parser.URL # Will print 'https://app.stg.quadanalytix.com/login' according to the example config.conf given above 
 
-Similarly the variable file config can be accessed using the same parser class :
+Similarly the varable file config can be accessed using the same parser class :
 from src.config import parser
 print parser.email_tag
 
