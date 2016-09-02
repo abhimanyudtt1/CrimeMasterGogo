@@ -49,7 +49,6 @@ def createTestSuitFromTdd(tdd,root = ''):
         for sub in tdd[suiteName]:
             if isinstance(sub,dict):
                 if root == '':
-                    #print "Sub",sub
                     createTestSuitFromTdd(sub,root = suiteName+'.'+sub.keys()[0])
                 else :
                     createTestSuitFromTdd(sub, root = root+'.'+sub.keys()[0])
@@ -102,7 +101,6 @@ def StartSeleniumServer(os):
         cmd = 'java -Dwebdriver.chrome.driver=./extensions/ubuntu/chromedriver -jar ./extensions/jars/selenium-server-standalone-3.0.0-beta1.jar 1>./selenium_logs 2>./selenium_logs &'
 
     import subprocess
-    print cmd
     subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
 
 
@@ -140,7 +138,6 @@ def main():  # The stating function
         if not os.path.exists(options.report):
             os.mkdir(options.report)
     os = checkOperatingSystem(options.config)
-    StartSeleniumServer(os)
     src.configs.parser.config(options.config)
     src.configs.parser.parseVariable(options.variable)
 
@@ -155,7 +152,6 @@ def reportFileCreate(i,report):
     while True :
         index -= 1
         if 'testMethod' in li[index] :
-            print li[index-1]
             break
     fileName = re.search('tests=\[\<([A-Za-z_\-\.1-9]+)', li[index-1]).group(1)
     return '/'.join([report,fileName])
@@ -197,18 +193,15 @@ except OSError as e :
 
 
 tdd = createTestDesign(path)
-print tdd
 createTestSuitFromTdd(tdd)
-threads = []
 
+
+threads = []
 for i in testSuite.values():
     if report == None :
         report = sys.stderr
     reportFile = reportFileCreate(i,report)
     i = unittest.TestSuite(i)
-    #outfile = open('./Testing.html','a')
-    #t = threading.Thread(target=xmlrunner.XMLTestRunner(output=report).run,args=(i,))
-    #t = threading.Thread(target=HTML.HTMLTestRunner(stream=outfile,title='Test Report',description='This demonstrates the report output by Prasanna.Yelsangikar.').run,args=(i,))
     t = threading.Thread(target=unittest.TextTestRunner(stream=sys.stderr).run,args=(i,))
     threads.append(t)
     t.start()
@@ -217,15 +210,10 @@ while not threading.active_count() == 1:
     time.sleep(1)
 
 
-print testResults.getFullReport()
 outfile = open('./report','w')
 
 outfile.write('%s' % testResults.getFullReport())
 outfile.close()
 
 slice.freeSliceAll()
-#StopSeleniumServer()
-print unittest
-#print reports.getFullReport()
-# Creating html reports now
 

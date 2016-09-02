@@ -25,6 +25,7 @@ class slice(object):
     def freeSliceAll(self):
         for each in self.q:
             self.q[each].close()
+            self.q[each].quit()
         self.q = {}
 
 

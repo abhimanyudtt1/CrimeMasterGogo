@@ -4,28 +4,27 @@ import ast
 
 
 def table1(k,v,line) :
-    if 'http' in str(v) :
-        line = line + "<tr>\
-            <td>%s</td>\
-                <td><a href='%s'>link</a></td>\
-            </tr>     " % (k, v)
-    elif 'passed' == str(v).lower() :
-        line = line + "<tr>\
-            <td>%s</td>\
+        if 'http' in str(v) :
+            line = line + "<tr>\
+                <td>%s</td>\
+                    <td><a href='%s'>link</a></td>\
+                </tr>     " % (k, v)
+        elif 'passed' == str(v).lower() :
+            line = line + "<tr>\
+                <td>%s</td>\
             <td bgcolor=lightgreen>%s</td>\
-        </tr>     " % (k, v)
-    elif 'failed' == str(v).lower() :
-        line = line + "<tr>\
-            <td>%s</td>\
-            <td bgcolor=red>%s</td>\
-        </tr>     " % (k, v)
-    else :
-        line = line + "<tr>\
-            <td>%s</td>\
-            <td>%s</td>\
-        </tr>     " % (k, v)
-
-    return line
+            </tr>     " % (k, v)
+        elif 'failed' == str(v).lower() :
+            line = line + "<tr>\
+                <td>%s</td>\
+                <td bgcolor=red>%s</td>\
+            </tr>     " % (k, v)
+        else :
+            line = line + "<tr>\
+                <td>%s</td>\
+                <td>%s</td>\
+            </tr>     " % (k, v)
+        return line
 
 def createTestReport(report, FH):
     passed = 0
@@ -77,5 +76,7 @@ if __name__ == '__main__':
     for line in report :
         report = ast.literal_eval(line)
         break
+    import collections
+
     FH = sys.argv[2]
-    createTestReport(report,FH)
+    createTestReport(collections.OrderedDict(sorted(report.items())),FH)

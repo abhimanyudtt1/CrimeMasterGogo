@@ -13,7 +13,7 @@ class TestLoginToUI_1(unittest.TestCase):
         driver = gogo.appUI.init()
         gogo.appUI.login()
         gogo.appUI.goToInsight('discounted_product_count')
-        gogo.appUI.selectDate(single=True)
+        gogo.appUI.selectDate()
         gogo.appUI.selectFilter('category', 'coffee maker')
         gogo.appUI.waitTillLoading()
         print "Checking if URL is correct"

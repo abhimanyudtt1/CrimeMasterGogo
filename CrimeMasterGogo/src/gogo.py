@@ -141,8 +141,14 @@ class appUI(object):
                     element.click()
                     break
                 except exceptions.NoSuchElementException :
+                    try :
+                        element = self.driver[suite].find_element_by_css_selector(parser.no_data_warning)
+                        element.click()
+                        break
+                    except exceptions.NoSuchElementException :
+                        pass
                     if counter > 5:
-                        raise exceptions.NoSuchElementException
+                        break
                 time.sleep(1)
         except exceptions.NoSuchElementException:
             email = self.waiter(parser.email_tag,driver=suite)
@@ -158,7 +164,7 @@ class appUI(object):
             tag = getattr(parser,sight)
         except AttributeError :
             print "No xpath or css selector present for %s " % sight
-            exit(127)
+            raise AttributeError('No xpath or css selector present for %s' % sight)
         tag = self.waiter(tag,driver=self.getCurrentTestSuit())
         self.clickElement(tag,driver=self.getCurrentTestSuit())
         self.clearAllFilters(parser.clear_all_button,driver=self.getCurrentTestSuit())
@@ -179,6 +185,8 @@ class appUI(object):
         endTime = str(int(time.mktime(time.strptime(endTime, pattern))))
         elements = self.waiter(parser.date_tag,multiple=True,driver=self.getCurrentTestSuit())
         fromEle = elements[0]
+        explore = self.waiter(parser.explore,driver=self.getCurrentTestSuit())
+        ActionChains(self.driver[self.getCurrentTestSuit()]).move_to_element(explore).perform()
         self.clickElement(fromEle,driver=driver)
         while True:
             try :
@@ -220,6 +228,12 @@ class appUI(object):
             if element.is_displayed():
                 element.click()
         if isinstance(text,str):
+            try :
+                element = self.driver[self.getCurrentTestSuit()].find_element_by_css_selector(tag + parser.filter_input_clear_button)
+                if element.is_displayed() :
+                    element.click()
+            except exceptions.NoSuchElementException :
+                pass
             self.sendKeys(tag+parser.filter_input_field,text,driver=self.getCurrentTestSuit())
             time.sleep(1)
             element = self.waiter(tag + parser.filter_select_all,driver=self.getCurrentTestSuit())
@@ -282,7 +296,7 @@ class appUI(object):
                 break
             if int(lag) < counter :
                 print "Page loading timeout"
-                raise exceptions.WebDriverException
+                raise exceptions.WebDriverException('Page Taking too long to load')
 
     def clearAllFilters(self,tag,driver = None):
         if driver == None:
